@@ -7,6 +7,7 @@ import HowItWorksPage from './pages/HowItWorksPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
 import DataSecurityPage from './pages/DataSecurityPage';
+import ContactPage from './pages/ContactPage';
 import { Analytics } from './utils/analytics';
 
 const App: React.FC = () => {
@@ -52,6 +53,8 @@ const App: React.FC = () => {
         return <TermsOfServicePage />;
       case 'data-security':
         return <DataSecurityPage />;
+      case 'contact':
+        return <ContactPage />;
       case 'home':
       default:
         return <HomePage />;

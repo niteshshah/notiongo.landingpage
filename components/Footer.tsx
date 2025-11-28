@@ -58,6 +58,7 @@ const Footer: React.FC = () => {
               <li><button onClick={() => handleNav('privacy-policy')} className="hover:text-indigo-600 text-left">Privacy Policy</button></li>
               <li><button onClick={() => handleNav('terms-of-service')} className="hover:text-indigo-600 text-left">Terms of Service</button></li>
               <li><button onClick={() => handleNav('data-security')} className="hover:text-indigo-600 text-left">Data Security</button></li>
+              <li><button onClick={() => handleNav('contact')} className="hover:text-indigo-600 text-left">Contact Us</button></li>
             </ul>
           </div>
 
