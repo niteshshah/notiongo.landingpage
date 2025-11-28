@@ -2,7 +2,7 @@ export const APP_NAME = "NotionGo";
 export const TAGLINE = "A calming database frontend that brings peace to your Notion workflow";
 export const PRIMARY_GRADIENT = "from-indigo-500 to-purple-500";
 export const HOVER_GRADIENT = "hover:from-indigo-600 hover:to-purple-600";
-export const LOGO_SRC = "/logo.png";
+export const LOGO_SRC = "./logo.png";
 
 export const FEATURES = [
   {
