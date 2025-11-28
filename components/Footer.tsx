@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { APP_NAME, LOGO_SRC } from '../constants';
-import { Twitter, Github, Linkedin, Database } from 'lucide-react';
+import { Twitter, Github, Linkedin, Facebook, Instagram, Database } from 'lucide-react';
 import { Analytics } from '../utils/analytics';
 
 const Footer: React.FC = () => {
@@ -65,15 +65,15 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-semibold text-slate-900 mb-4">Connect</h4>
             <div className="flex gap-4">
+              <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors" onClick={() => handleSocial('Facebook')}><Facebook size={20} /></a>
+              <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors" onClick={() => handleSocial('Instagram')}><Instagram size={20} /></a>
               <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors" onClick={() => handleSocial('Twitter')}><Twitter size={20} /></a>
-              <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors" onClick={() => handleSocial('Github')}><Github size={20} /></a>
-              <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors" onClick={() => handleSocial('Linkedin')}><Linkedin size={20} /></a>
             </div>
           </div>
         </div>
 
         <div className="pt-8 border-t border-slate-200 text-center text-sm text-slate-400">
-          <p>&copy; {new Date().getFullYear()} {APP_NAME}. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {APP_NAME} (Zwinny Solutions LLC). All rights reserved.</p>
         </div>
       </div>
     </footer>
