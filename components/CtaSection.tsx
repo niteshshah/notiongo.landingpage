@@ -1,12 +1,17 @@
 import React from 'react';
 import Button from './Button';
 import { Analytics } from '../utils/analytics';
+import { Download } from 'lucide-react';
 
 const CtaSection: React.FC = () => {
   const handleGetFree = () => {
     Analytics.trackEvent('Conversion', 'Click CTA', 'Bottom CTA Free');
   };
-
+  const handleDownload = () => {
+    Analytics.trackEvent('Conversion', 'Click Download', 'Hero Section');
+    // Logic for download usually goes here
+    alert("This would open the app store link!");
+  };
   const handleReadDocs = () => {
     Analytics.trackEvent('Engagement', 'Click Link', 'Bottom CTA Docs');
   };
@@ -20,24 +25,12 @@ const CtaSection: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to simplify your Notion workflow?</h2>
         <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">
-          Join thousands of users who have switched to a calmer, faster way of managing their databases on mobile.
+          Join thousands of users who have switched to a calmer, <br/>faster way of managing their databases on mobile.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button 
-            variant="primary" 
-            size="lg" 
-            className="bg-white text-slate-900 hover:bg-slate-100 shadow-none"
-            onClick={handleGetFree}
-          >
-            Get NotionGo Free
-          </Button>
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="border-slate-700 text-white hover:bg-slate-800 hover:text-white"
-            onClick={handleReadDocs}
-          >
-            Read the Docs
+
+          <Button size="lg" className="w-full sm:w-auto gap-2 group" onClick={handleDownload}>
+            Download App <Download size={18} className="group-hover:translate-y-0.5 transition-transform" />
           </Button>
         </div>
         <p className="mt-6 text-xs text-slate-500 uppercase tracking-widest">No credit card required</p>

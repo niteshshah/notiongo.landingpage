@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-semibold text-slate-900 mb-4">Connect</h4>
             <div className="flex gap-4">
-              <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors" onClick={() => handleSocial('Facebook')}><Facebook size={20} /></a>
+              <a href="https://www.facebook.com/profile.php?id=61583809614551" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-600 transition-colors" onClick={() => handleSocial('Facebook')}><Facebook size={20} /></a>
               <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors" onClick={() => handleSocial('Instagram')}><Instagram size={20} /></a>
               <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors" onClick={() => handleSocial('Twitter')}><Twitter size={20} /></a>
             </div>
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="pt-8 border-t border-slate-200 text-center text-sm text-slate-400">
-          <p>&copy; {new Date().getFullYear()} {APP_NAME} (Zwinny Solutions LLC). All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {APP_NAME} (Zwinny Solutions Pvt. Ltd.). All rights reserved.</p>
         </div>
       </div>
     </footer>
