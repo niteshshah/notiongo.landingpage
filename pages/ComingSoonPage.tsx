@@ -1,32 +1,82 @@
 import React, { useState } from 'react';
-import { Mail, Bell, CheckCircle, Zap, Users, Calendar } from 'lucide-react';
+import { Mail, Bell, CheckCircle, Zap, Users, Calendar, AlertCircle } from 'lucide-react';
 import Button from '../components/Button';
-import { APP_NAME } from '../constants';
+import { APP_NAME, WAITLIST_API_URL } from '../constants';
 import { Analytics } from '../utils/analytics';
 
 const ComingSoonPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
 
     setIsSubmitting(true);
+    setError(null);
     Analytics.trackEvent('Conversion', 'Join Waiting List', email);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setEmail('');
+    try {
+      // Check if we're in development mode and using mock
+      if (process.env.NODE_ENV === 'development' && WAITLIST_API_URL === 'MOCK') {
+        // Mock response for development
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        console.log('✅ Development mode: Email would be sent to API:', email);
+        console.log('📧 In production, this will send email to support@notiongo.app');
+        setIsSubmitted(true);
+        setEmail('');
+        Analytics.trackEvent('Conversion', 'Waiting List Success (Dev)', email);
+        return;
+      }
+
+      console.log('📡 Sending request to:', WAITLIST_API_URL);
+      console.log('📧 Email:', email);
+      
+      const response = await fetch(WAITLIST_API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      console.log('📊 Response status:', response.status);
+      
+      const responseText = await response.text();
+      console.log('📋 Raw response:', responseText);
+      
+      let result;
+      try {
+        result = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error('❌ JSON Parse Error:', parseError);
+        throw new Error('Server returned invalid response. Please try again.');
+      }
+
+      if (!response.ok) {
+        console.error('❌ API Error:', result);
+        throw new Error(result.error || 'Failed to join waiting list');
+      }
+
+      console.log('✅ Success:', result);
+      setIsSubmitted(true);
+      setEmail('');
+      Analytics.trackEvent('Conversion', 'Waiting List Success', email);
+    } catch (err) {
+      console.error('❌ Form submission error:', err);
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+      Analytics.trackEvent('Conversion', 'Waiting List Error', email);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
     setIsSubmitted(false);
     setEmail('');
+    setError(null);
   };
 
   return (
@@ -75,6 +125,13 @@ const ComingSoonPage: React.FC = () => {
                 <p className="text-slate-600 mb-6">
                   Be among the first to get early access and exclusive updates.
                 </p>
+                
+                {error && (
+                  <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-start gap-2">
+                    <AlertCircle className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
+                    <p className="text-red-700 text-sm">{error}</p>
+                  </div>
+                )}
                 
                 <div className="space-y-4">
                   <div>
