@@ -9,9 +9,8 @@ export const LOGO_SRC = "./logo.png";
 // 1. Use 'MOCK' for testing UI only
 // 2. Use your actual deployed URL to test real emails
 // For production, use relative path
-export const WAITLIST_API_URL = process.env.NODE_ENV === 'development' 
-  ? 'MOCK' // Change to your deployed URL if you want to test real emails in dev
-  : './api/waitlist.php';
+// Temporarily use MOCK for both dev and production until deployed
+export const WAITLIST_API_URL = './api/waitlist.php'
 
 export const FEATURES = [
   {
