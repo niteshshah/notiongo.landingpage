@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // ============================================
 // CONFIGURATION - UPDATE THESE VALUES
 // ============================================
-$RESEND_API_KEY = 're_MkgHzQ8V_JLbfnxcaGDH6gLbNdjUYn2o6'; // Get from https://resend.com/api-keys
+$RESEND_API_KEY = 'XXXX'; // Get from https://resend.com/api-keys
 $TO_EMAIL = 'support@notiongo.app';       // Your email to receive notifications
 $FROM_EMAIL = 'waitlist@notiongo.app';    // Must be from a verified domain in Resend
 // ============================================
