@@ -34,9 +34,16 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = 'home' }) => {
     setMobileMenuOpen(false);
   };
 
-  const handleGetStarted = () => {
-    Analytics.trackEvent('Conversion', 'Click CTA', 'Navbar Get Started');
+  const handleJoinWaitlist = () => {
+    Analytics.trackEvent('Conversion', 'Click CTA', 'Join Waitlist');
     window.location.hash = 'home';
+    // Scroll to waitlist form
+    setTimeout(() => {
+      const form = document.querySelector('#waitlist-form');
+      if (form) {
+        form.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   return (
@@ -67,9 +74,8 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = 'home' }) => {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => handleNav('features')} className={getLinkClass('features')}>Features</button>
-            <button onClick={() => handleNav('how-it-works')} className={getLinkClass('how-it-works')}>How it Works</button>
             <button onClick={() => handleNav('contact')} className={getLinkClass('contact')}>Contact</button>
-            <Button size="sm" className="shadow-none" onClick={handleGetStarted}>Get Started</Button>
+            <Button size="sm" className="shadow-none" onClick={handleJoinWaitlist}>Join Waitlist</Button>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -86,9 +92,8 @@ const Navbar: React.FC<NavbarProps> = ({ activePage = 'home' }) => {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-100 shadow-xl p-4 flex flex-col gap-4 animate-in slide-in-from-top-2 h-screen sm:h-auto">
           <button className="text-base font-medium text-slate-600 py-2 text-left" onClick={() => handleNav('features')}>Features</button>
-          <button className="text-base font-medium text-slate-600 py-2 text-left" onClick={() => handleNav('how-it-works')}>How it Works</button>
           <button className="text-base font-medium text-slate-600 py-2 text-left" onClick={() => handleNav('contact')}>Contact</button>
-          <Button className="w-full" onClick={handleGetStarted}>Get Started</Button>
+          <Button className="w-full" onClick={handleJoinWaitlist}>Join Waitlist</Button>
         </div>
       )}
     </nav>

@@ -50,7 +50,7 @@ const TermsOfServicePage: React.FC = () => {
           </section>
         </div>
       </div>
-      <CtaSection />
+      {/* <CtaSection /> */}
     </div>
   );
 };

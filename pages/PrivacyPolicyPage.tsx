@@ -59,7 +59,7 @@ const PrivacyPolicyPage: React.FC = () => {
           </section>
         </div>
       </div>
-      <CtaSection />
+      {/* <CtaSection /> */}
     </div>
   );
 };

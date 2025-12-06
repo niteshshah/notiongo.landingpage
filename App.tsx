@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
+import ComingSoonPage from './pages/ComingSoonPage';
 import FeaturesPage from './pages/FeaturesPage';
 import HowItWorksPage from './pages/HowItWorksPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
@@ -57,7 +57,7 @@ const App: React.FC = () => {
         return <ContactPage />;
       case 'home':
       default:
-        return <HomePage />;
+        return <ComingSoonPage />;
     }
   };
 

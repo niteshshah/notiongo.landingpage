@@ -8,7 +8,7 @@ const HomePage: React.FC = () => {
     <>
       <Hero />
       <Reviews />
-      <CtaSection />
+      {/* <CtaSection /> */}
     </>
   );
 };

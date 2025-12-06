@@ -47,8 +47,8 @@ const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm text-slate-600">
               <li><button onClick={() => handleNav('features')} className="hover:text-indigo-600">Features</button></li>
               <li><button onClick={() => handleNav('how-it-works')} className="hover:text-indigo-600">How it Works</button></li>
-              <li><a href="#" className="hover:text-indigo-600" onClick={() => Analytics.trackEvent('Navigation', 'Click Footer Link', 'Pricing')}>Pricing</a></li>
-              <li><a href="#" className="hover:text-indigo-600" onClick={() => Analytics.trackEvent('Navigation', 'Click Footer Link', 'Changelog')}>Changelog</a></li>
+              {/* <li><a href="#" className="hover:text-indigo-600" onClick={() => Analytics.trackEvent('Navigation', 'Click Footer Link', 'Pricing')}>Pricing</a></li> */}
+              <li><a href="#" className="hover:text-indigo-600" onClick={() => Analytics.trackEvent('Navigation', 'Click Footer Link', 'Changelog')}>Changelog</a></li> 
             </ul>
           </div>
 

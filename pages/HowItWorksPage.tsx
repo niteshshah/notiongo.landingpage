@@ -12,7 +12,7 @@ const HowItWorksPage: React.FC = () => {
         </p>
       </div>
       <HowItWorks />
-      <CtaSection />
+      {/* <CtaSection /> */}
     </div>
   );
 };

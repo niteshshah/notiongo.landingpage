@@ -82,7 +82,7 @@ const DataSecurityPage: React.FC = () => {
           </div>
         </div>
       </div>
-      <CtaSection />
+      {/* <CtaSection /> */}
     </div>
   );
 };
