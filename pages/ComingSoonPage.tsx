@@ -180,48 +180,6 @@ const ComingSoonPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Features Preview */}
-      <div className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-slate-900 mb-4">What to Expect</h2>
-          <p className="text-slate-600 text-center mb-16 max-w-2xl mx-auto">
-            Here's a sneak peek at what makes {APP_NAME} special
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Zap className="w-8 h-8 text-indigo-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Lightning Fast</h3>
-              <p className="text-slate-600">
-                Instant access to your Notion databases without the wait. Built for speed and efficiency.
-              </p>
-            </div>
-            
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Users className="w-8 h-8 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Team Friendly</h3>
-              <p className="text-slate-600">
-                Collaborate seamlessly with your team while maintaining the calm, focused experience you love.
-              </p>
-            </div>
-            
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Calendar className="w-8 h-8 text-emerald-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Smart Scheduling</h3>
-              <p className="text-slate-600">
-                Intelligent reminders and scheduling features that understand your workflow and priorities.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Launch Timeline */}
       <div className="py-20 px-4 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
