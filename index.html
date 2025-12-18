@@ -32,8 +32,12 @@
     <meta property="twitter:description" content="A calming database frontend that brings peace to your Notion workflow. Create custom forms, manage multiple databases, and capture ideas instantly." />
     <meta property="twitter:image" content="./logo.png" />
     
-    <!-- Canonical URL -->
+    <!-- Canonical URL - Always point to root for SPA -->
     <link rel="canonical" href="https://notiongo.app/" />
+    
+    <!-- Additional SEO -->
+    <meta name="google-site-verification" content="" /> <!-- Add your verification code here -->
+    <link rel="alternate" hreflang="en" href="https://notiongo.app/" />
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#6366f1" />
@@ -43,8 +47,28 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
+      "@type": "WebSite",
       "name": "NotionGo",
+      "url": "https://notiongo.app/",
+      "description": "A calming database frontend that brings peace to your Notion workflow",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://notiongo.app/",
+        "query-input": "required name=search_term_string"
+      },
+      "sameAs": [
+        "https://facebook.com/notiongo",
+        "https://instagram.com/notiongo"
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "NotionGo", 
+      "url": "https://notiongo.app/",
       "description": "A calming database frontend that brings peace to your Notion workflow",
       "applicationCategory": "ProductivityApplication",
       "operatingSystem": "iOS, Android, Web",
@@ -52,11 +76,6 @@
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "150"
       }
     }
     </script>
