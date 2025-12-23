@@ -8,6 +8,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
 import DataSecurityPage from './pages/DataSecurityPage';
 import ContactPage from './pages/ContactPage';
+import SitemapPage from './pages/SitemapPage';
 import { Analytics } from './utils/analytics';
 
 const App: React.FC = () => {
@@ -55,6 +56,8 @@ const App: React.FC = () => {
         return <DataSecurityPage />;
       case 'contact':
         return <ContactPage />;
+      case 'sitemap':
+        return <SitemapPage />;
       case 'home':
       default:
         return <HomePage />;

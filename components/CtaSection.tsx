@@ -1,17 +1,23 @@
 import React from 'react';
 import Button from './Button';
 import { Analytics } from '../utils/analytics';
-import { Download } from 'lucide-react';
+import { Download, Smartphone, Apple } from 'lucide-react';
 
 const CtaSection: React.FC = () => {
   const handleGetFree = () => {
     Analytics.trackEvent('Conversion', 'Click CTA', 'Bottom CTA Free');
   };
-  const handleDownload = () => {
-    Analytics.trackEvent('Conversion', 'Click Download', 'Hero Section');
-    // Logic for download usually goes here
-    alert("This would open the app store link!");
+  
+  const handleAndroidDownload = () => {
+    Analytics.trackEvent('Conversion', 'Click Download', 'Android App Store');
+    window.open('https://play.google.com/store/apps/details?id=com.zwinnysolutions.notiongo&pli=1', '_blank');
   };
+  
+  const handleAppleComingSoon = () => {
+    Analytics.trackEvent('Conversion', 'Click Download', 'iOS Coming Soon');
+    alert("🍎 iOS app is coming soon! We'll notify you when it's available.");
+  };
+  
   const handleReadDocs = () => {
     Analytics.trackEvent('Engagement', 'Click Link', 'Bottom CTA Docs');
   };
@@ -28,9 +34,19 @@ const CtaSection: React.FC = () => {
           Join thousands of users who have switched to a calmer, <br/>faster way of managing their databases on mobile.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-
-          <Button size="lg" className="w-full sm:w-auto gap-2 group" onClick={handleDownload}>
-            Download App <Download size={18} className="group-hover:translate-y-0.5 transition-transform" />
+          <Button size="lg" className="w-full sm:w-auto gap-2 group" onClick={handleAndroidDownload}>
+            <Smartphone size={18} />
+            Download for Android
+          </Button>
+          
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="w-full sm:w-auto gap-2 group border-slate-600 text-slate-300 hover:bg-slate-800 hover:border-slate-500" 
+            onClick={handleAppleComingSoon}
+          >
+            <Apple size={18} />
+            iOS Coming Soon
           </Button>
         </div>
         <p className="mt-6 text-xs text-slate-500 uppercase tracking-widest">No credit card required</p>
