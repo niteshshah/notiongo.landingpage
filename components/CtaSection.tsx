@@ -13,9 +13,9 @@ const CtaSection: React.FC = () => {
     window.open('https://play.google.com/store/apps/details?id=com.zwinnysolutions.notiongo&pli=1', '_blank');
   };
   
-  const handleAppleComingSoon = () => {
-    Analytics.trackEvent('Conversion', 'Click Download', 'iOS Coming Soon');
-    alert("🍎 iOS app is coming soon! We'll notify you when it's available.");
+  const handleiOSDownload = () => {
+    Analytics.trackEvent('Conversion', 'Click Download', 'CTA iOS App Store');
+    window.open('https://apps.apple.com/app/notiongo/id6738980498', '_blank');
   };
   
   const handleReadDocs = () => {
@@ -34,19 +34,22 @@ const CtaSection: React.FC = () => {
           Join thousands of users who have switched to a calmer, <br/>faster way of managing their databases on mobile.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button size="lg" className="w-full sm:w-auto gap-2 group" onClick={handleAndroidDownload}>
+          <Button
+            size="lg"
+            className="w-full sm:w-auto gap-2 group bg-[#3DDC84] hover:bg-[#32c973] text-black"
+            onClick={handleAndroidDownload}
+          >
             <Smartphone size={18} />
             Download for Android
           </Button>
-          
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="w-full sm:w-auto gap-2 group border-slate-600 text-slate-300 hover:bg-slate-800 hover:border-slate-500" 
-            onClick={handleAppleComingSoon}
+
+          <Button
+            size="lg"
+            className="w-full sm:w-auto gap-2 group bg-white hover:bg-gray-100 text-black"
+            onClick={handleiOSDownload}
           >
             <Apple size={18} />
-            iOS Coming Soon
+            Download for iOS
           </Button>
         </div>
         <p className="mt-6 text-xs text-slate-500 uppercase tracking-widest">No credit card required</p>

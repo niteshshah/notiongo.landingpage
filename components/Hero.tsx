@@ -11,9 +11,9 @@ const Hero: React.FC = () => {
     window.open('https://play.google.com/store/apps/details?id=com.zwinnysolutions.notiongo&pli=1', '_blank');
   };
   
-  const handleAppleComingSoon = () => {
-    Analytics.trackEvent('Conversion', 'Click Download', 'Hero iOS Coming Soon');
-    alert("🍎 iOS app is coming soon! We'll notify you when it's available.");
+  const handleiOSDownload = () => {
+    Analytics.trackEvent('Conversion', 'Click Download', 'Hero iOS App Store');
+    window.open('https://apps.apple.com/us/app/n-go/id6755326563', '_blank');
   };
 
   const handleViewFeatures = () => {
@@ -51,18 +51,21 @@ const Hero: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:w-auto gap-2 group" onClick={handleAndroidDownload}>
+              <Button
+                size="lg"
+                className="w-full sm:w-auto gap-2 group bg-[#3DDC84] hover:bg-[#32c973] text-black"
+                onClick={handleAndroidDownload}
+              >
                 <Smartphone size={18} />
                 Download for Android
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="w-full sm:w-auto gap-2 group border-slate-300 text-slate-700 hover:bg-slate-50" 
-                onClick={handleAppleComingSoon}
+              <Button
+                size="lg"
+                className="w-full sm:w-auto gap-2 group bg-black hover:bg-gray-800 text-white"
+                onClick={handleiOSDownload}
               >
                 <Apple size={18} />
-                iOS Coming Soon
+                Download for iOS
               </Button>
             </div>
             
