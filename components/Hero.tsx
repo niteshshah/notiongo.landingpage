@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Download, Star, Smartphone, Apple } from 'lucide-react';
+import { ArrowRight, Download, Star } from 'lucide-react';
 import Button from './Button';
 import { PhoneMockup, PhoneMockupSecondary } from './PhoneMockup';
 import { TAGLINE } from '../constants';
@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
               </span>
-              v1.0 Now Available
+              v1.0.2 Now Available
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]">
@@ -51,22 +51,12 @@ const Hero: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto gap-2 group bg-[#3DDC84] hover:bg-[#32c973] text-black"
-                onClick={handleAndroidDownload}
-              >
-                <Smartphone size={18} />
-                Download for Android
-              </Button>
-              <Button
-                size="lg"
-                className="w-full sm:w-auto gap-2 group bg-black hover:bg-gray-800 text-white"
-                onClick={handleiOSDownload}
-              >
-                <Apple size={18} />
-                Download for iOS
-              </Button>
+              <button onClick={handleAndroidDownload} className="cursor-pointer">
+                <img src="/androiddownload.svg" alt="Download for Android" className="h-[40px] w-auto" />
+              </button>
+              <button onClick={handleiOSDownload} className="cursor-pointer">
+                <img src="/appledownload.svg" alt="Download for iOS" className="h-[40px] w-auto" />
+              </button>
             </div>
             
             <div className="flex items-center gap-4 w-full sm:w-auto">

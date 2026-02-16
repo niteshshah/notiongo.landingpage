@@ -1,7 +1,5 @@
 import React from 'react';
-import Button from './Button';
 import { Analytics } from '../utils/analytics';
-import { Download, Smartphone, Apple } from 'lucide-react';
 
 const CtaSection: React.FC = () => {
   const handleGetFree = () => {
@@ -34,23 +32,12 @@ const CtaSection: React.FC = () => {
           Join thousands of users who have switched to a calmer, <br/>faster way of managing their databases on mobile.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button
-            size="lg"
-            className="w-full sm:w-auto gap-2 group bg-[#3DDC84] hover:bg-[#32c973] text-black"
-            onClick={handleAndroidDownload}
-          >
-            <Smartphone size={18} />
-            Download for Android
-          </Button>
-
-          <Button
-            size="lg"
-            className="w-full sm:w-auto gap-2 group bg-white hover:bg-gray-100 text-black"
-            onClick={handleiOSDownload}
-          >
-            <Apple size={18} />
-            Download for iOS
-          </Button>
+          <button onClick={handleAndroidDownload} className="cursor-pointer">
+            <img src="/androiddownload.svg" alt="Download for Android" className="h-[40px] w-auto" />
+          </button>
+          <button onClick={handleiOSDownload} className="cursor-pointer">
+            <img src="/appledownload.svg" alt="Download for iOS" className="h-[40px] w-auto" />
+          </button>
         </div>
         <p className="mt-6 text-xs text-slate-500 uppercase tracking-widest">No credit card required</p>
       </div>
