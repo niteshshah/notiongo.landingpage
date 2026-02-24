@@ -40,8 +40,6 @@
     <link rel="alternate" hreflang="en" href="https://notiongo.app/" />
     <link rel="alternate" hreflang="x-default" href="https://notiongo.app/" />
     
-    <!-- Fragment Identifier Meta -->
-    <meta name="fragment" content="!" />
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#6366f1" />
@@ -102,46 +100,11 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="./assets/index-CXiN4-Cd.js"></script>
+  <script type="module" crossorigin src="/assets/index-DbPIrL2x.js"></script>
 </head>
   <body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
     <div id="root"></div>
   
-    <!-- SEO: Ensure canonical URL is always consistent -->
-    <script>
-      // Remove any hash fragments from canonical URL for SEO
-      (function() {
-        var canonical = document.querySelector('link[rel="canonical"]');
-        if (canonical) {
-          canonical.href = 'https://notiongo.app/';
-        }
-        
-        // Update title and meta description based on current page
-        var updateSEOTags = function() {
-          var hash = window.location.hash.slice(1) || 'home';
-          var title = 'NotionGo - Calming Database Frontend for Notion';
-          var description = 'A calming database frontend that brings peace to your Notion workflow. Create custom forms, manage multiple databases, and capture ideas instantly with privacy-first design.';
-          
-          // Keep the same title and description for all pages to maintain consistency
-          document.title = title;
-          var metaDesc = document.querySelector('meta[name="description"]');
-          if (metaDesc) metaDesc.content = description;
-          
-          // Update Open Graph tags
-          var ogTitle = document.querySelector('meta[property="og:title"]');
-          var ogDesc = document.querySelector('meta[property="og:description"]');
-          var ogUrl = document.querySelector('meta[property="og:url"]');
-          
-          if (ogTitle) ogTitle.content = title;
-          if (ogDesc) ogDesc.content = description;
-          if (ogUrl) ogUrl.content = 'https://notiongo.app/';
-        };
-        
-        // Update on load and hash change
-        updateSEOTags();
-        window.addEventListener('hashchange', updateSEOTags);
-      })();
-    </script>
   
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">

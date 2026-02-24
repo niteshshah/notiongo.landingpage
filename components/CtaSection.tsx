@@ -33,10 +33,10 @@ const CtaSection: React.FC = () => {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <button onClick={handleAndroidDownload} className="cursor-pointer">
-            <img src="/androiddownload.svg" alt="Download for Android" className="h-[40px] w-auto" />
+            <img src="/androiddownload.svg" alt="Download for Android" className="h-[50px] w-auto" />
           </button>
           <button onClick={handleiOSDownload} className="cursor-pointer">
-            <img src="/appledownload.svg" alt="Download for iOS" className="h-[40px] w-auto" />
+            <img src="/appledownload.svg" alt="Download for iOS" className="h-[50px] w-auto" />
           </button>
         </div>
         <p className="mt-6 text-xs text-slate-500 uppercase tracking-widest">No credit card required</p>

@@ -27,10 +27,6 @@ RewriteRule . /index.html [L]
     Header always set X-Frame-Options DENY
     Header always set X-XSS-Protection "1; mode=block"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    
-    # SEO Headers - Force canonical URL
-    Header always set Link '<https://notiongo.app/>; rel="canonical"'
-    
     # Cache Control
     Header set Cache-Control "public, max-age=31536000" env=static_asset
 </IfModule>

@@ -4,21 +4,23 @@ import Button from './Button';
 import { PhoneMockup, PhoneMockupSecondary } from './PhoneMockup';
 import { TAGLINE } from '../constants';
 import { Analytics } from '../utils/analytics';
+import { navigate } from '../App';
 
 const Hero: React.FC = () => {
   const handleAndroidDownload = () => {
     Analytics.trackEvent('Conversion', 'Click Download', 'Hero Android App Store');
     window.open('https://play.google.com/store/apps/details?id=com.zwinnysolutions.notiongo&pli=1', '_blank');
   };
-  
+
   const handleiOSDownload = () => {
     Analytics.trackEvent('Conversion', 'Click Download', 'Hero iOS App Store');
     window.open('https://apps.apple.com/us/app/n-go/id6755326563', '_blank');
   };
 
-  const handleViewFeatures = () => {
+  const handleViewFeatures = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
     Analytics.trackEvent('Navigation', 'Click Link', 'Hero View Features');
-    window.location.hash = 'features';
+    navigate('features');
   };
 
   return (
@@ -52,22 +54,23 @@ const Hero: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <button onClick={handleAndroidDownload} className="cursor-pointer">
-                <img src="/androiddownload.svg" alt="Download for Android" className="h-[40px] w-auto" />
+                <img src="/androiddownload.svg" alt="Download for Android" className="h-[50px] w-auto" />
               </button>
               <button onClick={handleiOSDownload} className="cursor-pointer">
-                <img src="/appledownload.svg" alt="Download for iOS" className="h-[40px] w-auto" />
+                <img src="/appledownload.svg" alt="Download for iOS" className="h-[50px] w-auto" />
               </button>
             </div>
             
             <div className="flex items-center gap-4 w-full sm:w-auto">
-              <Button 
-                variant="secondary" 
-                size="lg" 
-                className="w-full sm:w-auto gap-2"
-                onClick={handleViewFeatures}
-              >
-                View Features <ArrowRight size={18} />
-              </Button>
+              <a href="/features" onClick={handleViewFeatures} className="w-full sm:w-auto">
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  className="w-full sm:w-auto gap-2 pointer-events-none"
+                >
+                  View Features <ArrowRight size={18} />
+                </Button>
+              </a>
             </div>
 
             <div className="flex items-center gap-4 pt-4">

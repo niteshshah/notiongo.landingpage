@@ -1,54 +1,62 @@
 import React from 'react';
 import { ExternalLink, Home, Info, Shield, FileText, MessageSquare, Lock, Map } from 'lucide-react';
 import { APP_NAME } from '../constants';
+import { navigate } from '../App';
 
 const SitemapPage: React.FC = () => {
   const sitePages = [
     {
       title: 'Home',
-      url: '#home',
+      url: '/',
+      page: 'home',
       description: 'Main landing page with app overview and download options',
       icon: <Home size={20} />,
       priority: 'High'
     },
     {
       title: 'Features',
-      url: '#features', 
+      url: '/features',
+      page: 'features',
       description: 'Detailed overview of NotionGo features and capabilities',
       icon: <Info size={20} />,
       priority: 'High'
     },
     {
       title: 'How It Works',
-      url: '#how-it-works',
+      url: '/how-it-works',
+      page: 'how-it-works',
       description: 'Step-by-step guide on how to use NotionGo',
       icon: <Info size={20} />,
       priority: 'High'
     },
     {
       title: 'Contact',
-      url: '#contact',
+      url: '/contact',
+      page: 'contact',
       description: 'Get in touch with our support team',
       icon: <MessageSquare size={20} />,
       priority: 'Medium'
     },
     {
       title: 'Data Security',
-      url: '#data-security',
+      url: '/data-security',
+      page: 'data-security',
       description: 'Information about how we protect your data',
       icon: <Shield size={20} />,
       priority: 'Medium'
     },
     {
       title: 'Privacy Policy',
-      url: '#privacy-policy',
+      url: '/privacy-policy',
+      page: 'privacy-policy',
       description: 'Our privacy policy and data handling practices',
       icon: <FileText size={20} />,
       priority: 'Low'
     },
     {
       title: 'Terms of Service',
-      url: '#terms-of-service',
+      url: '/terms-of-service',
+      page: 'terms-of-service',
       description: 'Terms and conditions for using NotionGo',
       icon: <FileText size={20} />,
       priority: 'Low'
@@ -81,27 +89,28 @@ const SitemapPage: React.FC = () => {
 
         {/* Site Pages Grid */}
         <div className="grid md:grid-cols-2 gap-6">
-          {sitePages.map((page, index) => (
+          {sitePages.map((sPage, index) => (
             <a
               key={index}
-              href={page.url}
+              href={sPage.url}
+              onClick={(e) => { e.preventDefault(); navigate(sPage.page); }}
               className="block bg-white rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all duration-200 p-6 group"
             >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 group-hover:bg-indigo-200 transition-colors">
-                  {page.icon}
+                  {sPage.icon}
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2">
                     <h3 className="text-lg font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors">
-                      {page.title}
+                      {sPage.title}
                     </h3>
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(page.priority)}`}>
-                      {page.priority}
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(sPage.priority)}`}>
+                      {sPage.priority}
                     </span>
                   </div>
                   <p className="text-slate-600 text-sm leading-relaxed mb-2">
-                    {page.description}
+                    {sPage.description}
                   </p>
                   <div className="flex items-center text-indigo-600 text-sm font-medium">
                     <span>Visit page</span>
