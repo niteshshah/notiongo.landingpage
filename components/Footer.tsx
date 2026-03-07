@@ -48,8 +48,6 @@ const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm text-slate-600">
               <li><a href="/features" onClick={(e) => handleNav(e, 'features')} className="hover:text-indigo-600">Features</a></li>
               <li><a href="/how-it-works" onClick={(e) => handleNav(e, 'how-it-works')} className="hover:text-indigo-600">How it Works</a></li>
-              <li><span className="text-slate-400">Pricing — Coming Soon</span></li>
-              <li><span className="text-slate-400">Changelog — Coming Soon</span></li>
             </ul>
           </div>
 
