@@ -1,19 +1,22 @@
 
-name: Deploy WebApp to cPanel
+name: Deploy Landing Page to cPanel
 
 on:
   push:
     branches: [main]
     paths:
-      - 'apps/web-app/**'
-      - 'libs/**'
+      - 'src/**'
+      - 'public/**'
+      - 'index.html'
+      - 'package.json'
+      - 'vite.config.*'
   workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     concurrency:
-      group: deploy-webapp
+      group: deploy-landing-page
       cancel-in-progress: false
 
     steps:
@@ -28,8 +31,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build web app (production)
-        run: npx nx build web-app --configuration=production
+      - name: Build (production)
+        run: npm run build
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -37,7 +40,7 @@ jobs:
           server: ${{ secrets.CPANEL_FTP_HOST }}
           username: ${{ secrets.CPANEL_FTP_USER }}
           password: ${{ secrets.CPANEL_FTP_PASSWORD }}
-          local-dir: ./dist/apps/web-app/browser/
+          local-dir: ./dist/
           server-dir: ${{ secrets.CPANEL_FTP_REMOTE_DIR }}
           dangerous-clean-slate: true
           exclude: |
