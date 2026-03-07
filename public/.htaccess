@@ -32,9 +32,11 @@ RewriteRule . /index.html [L]
 </IfModule>
 
 # Set environment variable for static assets
-<FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
-    SetEnv static_asset
-</FilesMatch>
+<IfModule mod_env.c>
+    <FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
+        SetEnv static_asset
+    </FilesMatch>
+</IfModule>
 
 # Cache settings
 <IfModule mod_expires.c>
