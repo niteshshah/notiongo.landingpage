@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { APP_NAME, LOGO_SRC } from '../constants';
-import { Twitter, Github, Linkedin, Facebook, Instagram, Database } from 'lucide-react';
+import { Facebook, Database } from 'lucide-react';
 import { Analytics } from '../utils/analytics';
 import { navigate } from '../App';
 
@@ -48,8 +48,8 @@ const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm text-slate-600">
               <li><a href="/features" onClick={(e) => handleNav(e, 'features')} className="hover:text-indigo-600">Features</a></li>
               <li><a href="/how-it-works" onClick={(e) => handleNav(e, 'how-it-works')} className="hover:text-indigo-600">How it Works</a></li>
-              <li><a href="#" className="hover:text-indigo-600" onClick={() => Analytics.trackEvent('Navigation', 'Click Footer Link', 'Pricing')}>Pricing</a></li>
-              <li><a href="#" className="hover:text-indigo-600" onClick={() => Analytics.trackEvent('Navigation', 'Click Footer Link', 'Changelog')}>Changelog</a></li>
+              <li><span className="text-slate-400">Pricing — Coming Soon</span></li>
+              <li><span className="text-slate-400">Changelog — Coming Soon</span></li>
             </ul>
           </div>
 
@@ -67,8 +67,6 @@ const Footer: React.FC = () => {
             <h4 className="font-semibold text-slate-900 mb-4">Connect</h4>
             <div className="flex gap-4">
               <a href="https://www.facebook.com/profile.php?id=61583809614551" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-600 transition-colors" onClick={() => handleSocial('Facebook')}><Facebook size={20} /></a>
-              <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors" onClick={() => handleSocial('Instagram')}><Instagram size={20} /></a>
-              <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors" onClick={() => handleSocial('Twitter')}><Twitter size={20} /></a>
             </div>
           </div>
         </div>

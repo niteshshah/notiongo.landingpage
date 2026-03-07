@@ -73,24 +73,15 @@ const Hero: React.FC = () => {
               </a>
             </div>
 
-            <div className="flex items-center gap-4 pt-4">
-               <div className="flex -space-x-2">
-                 {[1,2,3,4].map(i => (
-                    <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-[10px] text-slate-500 font-bold overflow-hidden">
-                       <img src={`https://picsum.photos/100/100?random=${i}`} alt="User" className="w-full h-full object-cover" />
-                    </div>
-                 ))}
+            <div className="flex items-center gap-3 pt-4">
+               <div className="flex items-center text-yellow-400 gap-0.5">
+                  <Star size={14} fill="currentColor" />
+                  <Star size={14} fill="currentColor" />
+                  <Star size={14} fill="currentColor" />
+                  <Star size={14} fill="currentColor" />
+                  <Star size={14} fill="currentColor" />
                </div>
-               <div className="text-sm text-slate-600">
-                  <div className="flex items-center text-yellow-400 gap-0.5">
-                     <Star size={12} fill="currentColor" />
-                     <Star size={12} fill="currentColor" />
-                     <Star size={12} fill="currentColor" />
-                     <Star size={12} fill="currentColor" />
-                     <Star size={12} fill="currentColor" />
-                  </div>
-                  <span className="font-medium text-slate-900">100+</span> Early Adopters
-               </div>
+               <span className="text-sm text-slate-600">Join our early adopters</span>
             </div>
           </div>
 
