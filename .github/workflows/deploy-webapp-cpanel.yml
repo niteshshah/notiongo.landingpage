@@ -45,4 +45,3 @@ jobs:
           dangerous-clean-slate: true
           exclude: |
             .well-known/**
-            .htaccess/**
